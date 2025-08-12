@@ -96,7 +96,8 @@ public class Principal {
     }
 
     private void listarMusicas() {
-
+        List<Artista> artistas = repositorio.findAll();
+        artistas.forEach(a -> a.getMusicas().forEach(System.out::println));
     }
 
     private void buscarMusicasPorArtista() {
