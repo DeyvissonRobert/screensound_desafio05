@@ -22,9 +22,9 @@ public class Principal {
     public void exibeMenu() {
         var opcao = -1;
 
-        while (opcao!= 9) {
+        while (opcao!= 0) {
             var menu = """
-                    *** Screen Sound Músicas ***                    
+                    ===== Screen Sound Músicas =====
                                         
                     1- Cadastrar artistas
                     2- Cadastrar músicas
@@ -92,7 +92,7 @@ public class Principal {
             artista.get().getMusicas().add(musica);
             repositorio.save(artista.get());
         } else {
-            System.out.println("Artista não encontrado");
+            System.out.println("⚠⚠⚠Artista não encontrado⚠⚠⚠");
         }
     }
 
