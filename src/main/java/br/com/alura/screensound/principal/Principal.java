@@ -4,6 +4,7 @@ import br.com.alura.screensound.model.Artista;
 import br.com.alura.screensound.model.Musica;
 import br.com.alura.screensound.model.TipoArtista;
 import br.com.alura.screensound.repository.ArtistaRepository;
+import br.com.alura.screensound.service.ConsultaGemini;
 
 import java.util.List;
 import java.util.Optional;
@@ -31,7 +32,7 @@ public class Principal {
                     4- Buscar músicas por artistas
                     5- Pesquisar dados sobre um artista
                                     
-                    9 - Sair
+                    0 - Sair
                     """;
 
             System.out.println(menu);
@@ -54,7 +55,7 @@ public class Principal {
                 case 5:
                     pesquisarDadosDoArtista();
                     break;
-                case 9:
+                case 0:
                     System.out.println("Encerrando a aplicação!");
                     break;
                 default:
@@ -108,6 +109,10 @@ public class Principal {
     }
 
     private void pesquisarDadosDoArtista() {
+        System.out.println("Pesquisar dados sobre qual artista? ");
+        var nome = leitura.nextLine();
+        var resposta = ConsultaGemini.obterInformacao(nome);
+        System.out.println(resposta.trim());
     }
 
 
